@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CGI</title>
+	<link rel="stylesheet" href="/cgi-bin/forms/styles/style.css" />
+</head>
+
+<body>
+	<form action="/cgi-bin/forms/scripts/script.js" id="myForm">
+		<div class="inp">
+			<p>Choose language:</p>
+			<div class="select language">
+				<input name="lang" type="radio" id="python" value="py" checked />
+				<label for="python">PYTHON</label>
+				<input name="lang" type="radio" value="js" id="node" />
+				<label for="node">NODE.JS</label>
+			</div>
+		</div>
+		<div class="inp">
+			<p>Choose methode:</p>
+			<div class="select methodes">
+				<input name="methode" type="radio" value="POST" id="post" checked />
+				<label for="post">POST</label>
+				<input name="methode" type="radio" value="GET" id="get" />
+				<label for="get">GET</label>
+				<input name="methode" type="radio" value="DELETE" id="delete" />
+				<label for="delete">DELETE</label>
+			</div>
+		</div>
+		<div class="inp">
+			<label for="name">Name</label>
+			<input required name="name" id="name" type="text" placeholder="Enter your name" />
+		</div>
+		<div class="inp">
+			<label for="email">Email</label>
+			<input required name="email" id="email" type="email" placeholder="Enter your email" />
+		</div>
+		<div class="inp">
+			<label for="message">Message</label>
+			<textarea id="message" name="message" placeholder="Enter your message"></textarea>
+		</div>
+		<input required id="submit" type="submit" value="OK">
+	</form>
+</body>
+
+</html>

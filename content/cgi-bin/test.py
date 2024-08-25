@@ -1,7 +1,3 @@
-body = """
-	salam
-"""
-print("HTTP/1.1 200 OK", end="\r\n")
-print(f"Content-Lenght: {len(body)}", end="\r\n")
-print('\r')
-print(body)
+#!/usr/bin/env python3
+body = "Hello World"
+print(f"HTTP/1.1 200 OK\r\nContent-Length: {len(body)}\r\nContent-Type: text/html\r\n\r\n{body}", end="")

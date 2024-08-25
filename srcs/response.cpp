@@ -329,7 +329,6 @@ void	response::send_cgi_headers(int fd, std::ifstream& requested_file)
 		headers += reader;
 		if (reader == "\r\n")
 		{
-			std::cout << "dkhel" << std::endl;
 			break;
 		}
 	}
@@ -344,7 +343,7 @@ void	response::send_cgi_headers(int fd, std::ifstream& requested_file)
 	std::streamsize endofstream = requested_file.tellg();
 	std::cout << "end = " << endofstream << std::endl;
 
-	this->_content_length = endofstream - curr - 1; // becose std::ios::end is after the last character
+	this->_content_length = endofstream - curr;
 	requested_file.seekg(pos + 4, std::ios::beg);
 	std::cout << "length ===> " << this->_content_length << std::endl;
 }

@@ -1,4 +1,5 @@
 #include "../inc/webserv.hpp"
+#include <algorithm>
 #include <fcntl.h>
 #include "../inc/config.hpp"
 #include <unistd.h>
@@ -34,7 +35,6 @@ void	webserv::serve_clients(fd_sets & set_fd, char** env)
 
 					if (servers[index]._clients[j]._cgi._cgi_processing == true)
 					{
-						// std::cout << "dkhel l cgi" << std::endl;
 						servers[index]._clients[j]._cgi.run_cgi(servers[index]._clients[j], env);
 						if (servers[index]._clients[j]._cgi._cgi_processing == false)
 						{
@@ -55,8 +55,8 @@ void	webserv::serve_clients(fd_sets & set_fd, char** env)
 						if (servers[index]._clients[j]._response._bytes_sent >= servers[index]._clients[j]._response._content_length)
 						{
 							std::cout << "all chunks are sent to fd " << servers[index]._clients[j].get_fd() << std::endl;
-							servers[index]._clients[j].clear_client();
 							FD_CLR(servers[index]._clients[j].get_fd(), &set_fd.write_fds);
+							servers[index]._clients[j].clear_client();
 						}
 					}
 				}
@@ -116,7 +116,7 @@ void    webserv::launch_server(char** env)
 
 	while (true)
 	{
-		// std::cout << "Waiting for connections...." << std::endl;
+		std::cout << "Waiting for connections...." << std::endl;
 
 		set_fd.read_fds_tmp = set_fd.read_fds;
 		set_fd.write_fds_tmp = set_fd.write_fds;

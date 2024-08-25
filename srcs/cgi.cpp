@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <cstring>
 #include <fcntl.h>
+#include <iostream>
 #include <unistd.h>
 #include <cstdio>
 #include <dirent.h>
@@ -94,7 +95,6 @@ std::string	cgi::get_random_file_name(int client_index)
 	return ("/tmp/" + file_name);
 }
 
-// void	cgi::run_cgi(request client_req, std::string path_to_serve, char** environ)
 void	cgi::run_cgi(client & cl, char** environ)
 {
 	unsigned char*	st;
@@ -139,6 +139,7 @@ void	cgi::run_cgi(client & cl, char** environ)
 	else if (this->_first_time == false)
 	{
 		pid_t	wpid = waitpid(this->_pid, &this->_exit_status, WNOHANG);
+
 		if (wpid == -1)
 		{
 			// std::cout << "wpid = -1" << std::endl;

@@ -9,13 +9,13 @@
 </head>
 
 <body>
-	<form action="/cgi-bin/forms/scripts/script.js" id="myForm">
+	<form id="myForm">
 		<div class="inp">
 			<p>Choose language:</p>
 			<div class="select language">
-				<input name="lang" type="radio" id="python" value="py" checked />
+				<input name="language" type="radio" id="python" value="py" checked />
 				<label for="python">PYTHON</label>
-				<input name="lang" type="radio" value="js" id="node" />
+				<input name="language" type="radio" value="ejs" id="node" />
 				<label for="node">NODE.JS</label>
 			</div>
 		</div>
@@ -40,10 +40,11 @@
 		</div>
 		<div class="inp">
 			<label for="message">Message</label>
-			<textarea id="message" name="message" placeholder="Enter your message"></textarea>
+			<textarea id="message" name="message" placeholder="Enter your message" required></textarea>
 		</div>
-		<input required id="submit" type="submit" value="OK">
+		<input id="sub" type="submit" value="OK">
 	</form>
+	<script src="/cgi-bin/forms/scripts/script.js"></script>
 </body>
 
 </html>

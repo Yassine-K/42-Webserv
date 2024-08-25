@@ -1,0 +1,103 @@
+* > * {
+	box-sizing: border-box;
+}
+
+body {
+	// background: linear-gradient(45deg, #323232, #1a1a1a) no-repeat;
+	background: url('../back.jpg') no-repeat, rgb(0, 53, 53);
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: luminosity;
+	width: 100%;
+	height: 100dvh;
+	padding: 20px;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&::after{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		content: "";
+		background-color: #00000060;
+		z-index: 1;
+		filter: blur(6px);
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	max-width: 700px;
+	color: #fff;
+	position: relative;
+	z-index: 2;
+
+	input, textarea {
+		padding: 10px;
+		border-radius: 5px;
+		border: none;
+
+		&:focus {
+			outline: 2px solid rgb(0, 208, 208);
+		}
+	}
+}
+
+.select {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+
+	input {
+		display: none;
+
+		&:checked + label {
+			background-color: rgb(0, 208, 208);
+		}
+	}
+
+	label {
+		border: 1px solid rgba(0, 208, 208, .5);
+		padding: 10px 20px;
+		background-color: #000;
+		flex-grow: 1;
+		text-align: center;
+		transition: all 0.15s linear;
+		cursor: pointer;
+		border-radius: 5px;
+		min-width: 120px;
+	}
+}
+
+.inp {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+input[type="submit"] {
+	color: #fff;
+	background-color: rgb(0, 208, 208);
+	border: 1px solid rgb(0, 208, 208);
+	width: 30%;
+	margin-inline: auto;
+	cursor: pointer;
+	transition: all 0.15s linear;
+
+	&:hover {
+		background-color: rgb(1, 171, 171);
+	}
+}
+
+p{
+	margin: 0;
+}

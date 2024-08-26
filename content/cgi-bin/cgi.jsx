@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 data = decodeURIComponent(process.env.QUERY_STRING?.replace('+', ' ')).split('&')
 
-// if (process.env.REQUEST_METHOD == 'POST')
-// 	data = readLine()
-
 body = `
 	<!DOCTYPE html>
 	<html lang="en">

@@ -111,6 +111,10 @@ p {
   position: relative;
   z-index: 2;
   gap: 20px;
+  border: 1px solid rgba(0, 208, 208, 0.5);
+  padding: 40px 20px;
+  background: #000;
+  border-radius: 10px;
 }
 .response > * {
   margin: 0;

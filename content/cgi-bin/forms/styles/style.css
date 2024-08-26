@@ -54,6 +54,11 @@ form input:focus, form textarea:focus {
   gap: 20px;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 480px) {
+  .select {
+    flex-direction: column;
+  }
+}
 .select input {
   display: none;
 }
@@ -69,7 +74,12 @@ form input:focus, form textarea:focus {
   transition: all 0.15s linear;
   cursor: pointer;
   border-radius: 5px;
-  min-width: 120px;
+  width: 30%;
+}
+@media screen and (max-width: 480px) {
+  .select label {
+    width: 100%;
+  }
 }
 
 .inp {

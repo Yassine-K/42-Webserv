@@ -2,7 +2,7 @@
 import os
 import urllib.parse
 
-data = urllib.parse.unquote(os.environ['QUERY_STRING']).split('&')
+data = urllib.parse.unquote(os.environ['QUERY_STRING'].replace('+', ' ')).split('&')
 
 body = f"""
 	<!DOCTYPE html>

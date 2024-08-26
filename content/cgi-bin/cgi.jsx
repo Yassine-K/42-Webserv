@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-data = decodeURIComponent(process.env.QUERY_STRING).split('&')
+data = decodeURIComponent(process.env.QUERY_STRING?.replace('+', ' ')).split('&')
 
 // if (process.env.REQUEST_METHOD == 'POST')
 // 	data = readLine()
@@ -18,9 +18,9 @@ body = `
 	<body>
 		<div class="response">
 			<h1>Methode: ${process.env.REQUEST_METHOD}</h1>
-			<h2>${data[2].replace('=', ': ')}</h2>
-			<h2>${data[3].replace('=', ': ')}</h2>
-			<h2>${data[4].replace('=', ': ')}</h2>
+			<h2>${data[2]?.replace('=', ': ')}</h2>
+			<h2>${data[3]?.replace('=', ': ')}</h2>
+			<h2>${data[4]?.replace('=', ': ')}</h2>
 		</div>
 	</body>
 

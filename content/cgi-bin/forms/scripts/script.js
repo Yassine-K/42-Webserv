@@ -16,6 +16,5 @@ myCGI.addEventListener('submit', (e) => {
 	});
 	myCGI.action = '/cgi-bin/test.' + myEntries.language;
 	myCGI.method = myEntries.methode;
-	console.log(myCGI)
 	myCGI.submit();
 })

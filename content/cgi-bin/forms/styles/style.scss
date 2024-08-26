@@ -16,6 +16,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
 
 	&::after{
 		position: absolute;
@@ -33,7 +35,6 @@ form {
 	flex-direction: column;
 	gap: 20px;
 	width: 100%;
-	font-family: Arial, Helvetica, sans-serif;
 	max-width: 700px;
 	color: #fff;
 	position: relative;
@@ -100,4 +101,16 @@ input[type="submit"] {
 
 p{
 	margin: 0;
+}
+
+.response{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	gap: 20px;
+
+	& > * {
+		margin: 0;
+	}
 }

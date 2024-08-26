@@ -8,6 +8,12 @@
 #include <dirent.h>
 #include "../inc/error.hpp"
 
+std::string numberToString(int number) {
+  std::stringstream ss;
+  ss << number;
+  return ss.str();
+}
+
 cgi::cgi() : _pid(-1), _exit_status(-1), _cgi_processing(false), _env(NULL), _args(NULL), _first_time(true), _outfile(""),
 				_infile("")
 {
@@ -20,6 +26,7 @@ void	cgi::set_env_variables(request client_req, char** environ)
 	std::vector<std::string>	temp;
 
 	temp.push_back("REQUEST_METHOD=" + client_req._method);
+	temp.push_back("CONTENT_LENGTH=" + numberToString(client_req._content_length));
 	temp.push_back("QUERY_STRING=" + client_req._query_params);
 	
 
